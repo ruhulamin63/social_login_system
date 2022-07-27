@@ -50,8 +50,8 @@
                                 </div>
 
                                 <a href="{{ route('login-facebook') }}" class="btn btn-success">Facebook</a>
-{{--                                <a href="#" class="btn btn-success">Google</a>--}}
-{{--                                <a href="#" class="btn btn-success">GitHub</a>--}}
+                                <a href="{{ route('login-google') }}" class="btn btn-success">Google</a>
+                                <a href="{{ route('login-github') }}" class="btn btn-success">GitHub</a>
 
                             </div>
                         </div>

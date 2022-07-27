@@ -36,4 +36,15 @@ return [
         'redirect' => 'http://localhost:8000/login/facebook/callback',
     ],
 
+    'google' => [
+        'client_id' => '450733711462-cp42j54vuvu36mfr8edc065qgsb9klut.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost:8000/login/google/callback',
+    ],
+
+    'github' => [
+        'client_id' => 'fdfea35a91a8e3ffd940',
+        'client_secret' => '5345c96367a652800a8a3382dc0ffcee7d2bf81a',
+        'redirect' => 'http://localhost:8000/login/github/callback',
+    ],
 ];

@@ -1,0 +1,3 @@
+GitHub: https://github.com/settings/developers
+Facebook: https://developers.facebook.com
+Google: https://console.cloud.google.com
