@@ -9,16 +9,37 @@ git clone https://github.com/ruhulamin63/social_login_system.git
 
 ## Installation
 
-```php
-Composer update
+```bash
+cp .env.example .env
+```
 
-Add .env file
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your-db-name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+### Add facebook_id Column
+#### In this step, first, we have to create a migration to add the facebook_id in your user table. So let's run the below command:
+```bash
+php artisan make:migration add_facebook_id_column
+```
 
-php artisan serve
+```bash
+composer update
 ```
 ## Create database
 ```php
 php artisan migrate
+```
+
+## Create developer account
+```php
+GitHub: https://github.com/settings/developers
+Facebook: https://developers.facebook.com
+Google: https://console.cloud.google.com
 ```
 
 ## Configuration Setting
@@ -29,12 +50,13 @@ php artisan migrate
 https://developers.facebook.com/apps
 ```
 ```php
-'facebook' => [
-    'client_id' => 'facebook_id',
-    'client_secret' => 'facebook_secret',
-//    'redirect' => 'http://example.com/callback-url',
-    'redirect' => 'http://localhost:8000/login/facebook/callback',
-],
+return [
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI'),
+    ],
+]
 ```
 
 ## Create Google Developer Apps
@@ -60,4 +82,11 @@ https://github.com/settings/developers
 ],
 ```
 
-Copyright © All rights reserved by [rahridoy.com](https://jahidulislamzim.com/)
+### .env
+```php
+FACEBOOK_CLIENT_ID=your-client-id
+FACEBOOK_CLIENT_SECRET=your-client-secret
+FACEBOOK_REDIRECT_URI=http://localhost:8000/auth/facebook/callback
+```
+
+Copyright © All rights reserved by Ruhul Amin
